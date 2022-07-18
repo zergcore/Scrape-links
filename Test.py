@@ -154,13 +154,13 @@ def processChats(chats, j):
 
 offset=0
 j=0
-dialogs=getDialogs(offset, j)
+dialogs=getDialogs(offset)
 dialogs_count=dialogs.count
 while True:
     print('Offset: ',offset,'Links attached: ', len(links))
-    dialogs=getDialogs(offset, j)
+    dialogs=getDialogs(offset)
     chats.extend(dialogs.chats)
-    processChats(chats)
+    processChats(chats,j)
     offset+=150
     links_count=len(links)
     if len(dialogs.chats)<150:
